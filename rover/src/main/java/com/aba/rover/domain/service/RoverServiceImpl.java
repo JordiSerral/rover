@@ -36,6 +36,9 @@ public class RoverServiceImpl implements RoverService {
 			if(invalidDirection) {
 				throw new InvalidDirectionException(mov.getDirection());
 			}
+			if(position.validatePosition()){
+				throw new InvalidDirectionException(mov.getDirection());
+			}
 		}
 		return position;
 	
@@ -50,6 +53,14 @@ public class RoverServiceImpl implements RoverService {
 		display.teach();
 	}
 	
+	
+	/*private boolean validatePosition(Position position) {
+		
+		return (position.getLatitude() < Position.MINLAT
+				|| position.getLatitude() > Position.MAXLAT
+				|| position.getLongitude() < Position.MINLONG
+				|| position.getLongitude() > Position.MAXLONG);
+	}*/
 	
 	private void moveLongitude(Position position, Integer units, boolean advance) {
 		

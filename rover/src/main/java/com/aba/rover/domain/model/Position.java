@@ -9,6 +9,9 @@ public class Position {
 	
 	public static final Integer MAXLAT = 100;
 	public static final Integer MAXLONG = 100;
+	public static final Integer MINLAT = -100;
+	public static final Integer MINLONG = -100;
+	
 	
 	
 	public Position() {
@@ -67,5 +70,12 @@ public class Position {
 			return false;
 		return true;
 	}
-
+	
+	public boolean validatePosition() {
+		
+		return (this.getLatitude() < Position.MINLAT
+				|| this.getLatitude() > Position.MAXLAT
+				|| this.getLongitude() < Position.MINLONG
+				|| this.getLongitude() > Position.MAXLONG);
+	}
 }
