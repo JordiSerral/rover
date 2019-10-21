@@ -18,19 +18,8 @@ Response a Position with Latitude & Longitude
 
 #### English
 To teach English sentence in Display:
-	-Sentence (String)
+	- Sentence (String)
 
-### Examples
-
-	
-```bash
-curl -H "Accept:application/json" -H "Content-Type:application/json" -X POST --data {"Hello Aliens, I'm ABA Rover"} "http://localhost:8080/rovers/english"
-Rover is displaying the message on his display:{Hello Aliens, I'm ABA Rover}
-
-
-curl -H "Accept:application/json" -H "Content-Type:application/json" -X POST --data "[{"""direction""":"""S""", """units""":"""8"""}]" "http://localhost:8080/rovers/position"
-Position [Latitude=0, Longitude=-8]
-
-curl -H "Accept:application/json" -H "Content-Type:application/json" -X POST --data "[{"""direction""":"""S""", """units""":"""8"""},{"""direction""":"""E""", """units""":"""44"""}]" "http://localhost:8080/rovers/position"
-Position [Latitude=44, Longitude=-8]
+```json
+[{"""direction""":"""S""", """units""":"""8"""}]
 ```
