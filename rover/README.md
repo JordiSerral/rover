@@ -13,13 +13,20 @@ To move Rover need a List of Movements:
 
 	- Direction ('N','S','E','W')
 	- Units (Integer)
+
+#####Example
+```json
+[{"direction":"S", "units":"8"}]
+```
 	
 Response a Position with Latitude & Longitude
 
 #### English
 To teach English sentence in Display:
+
 	- Sentence (String)
 
+#####Example
 ```json
-[{"""direction""":"""S""", """units""":"""8"""}]
+{"Hello Aliens, I'm ABA Rover"}
 ```
