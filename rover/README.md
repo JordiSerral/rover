@@ -30,3 +30,7 @@ To teach English sentence in Display:
 ```json
 {"Hello Aliens, I'm ABA Rover"}
 ```
+
+##ApiDoc
+-Unzip apidoc.7z
+-open index.html
