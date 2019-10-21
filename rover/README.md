@@ -14,7 +14,7 @@ To move Rover need a List of Movements:
 	- Direction ('N','S','E','W')
 	- Units (Integer)
 
-#####Example
+##### Example
 ```json
 [{"direction":"S", "units":"8"}]
 ```
@@ -26,7 +26,7 @@ To teach English sentence in Display:
 
 	- Sentence (String)
 
-#####Example
+##### Example
 ```json
 {"Hello Aliens, I'm ABA Rover"}
 ```
