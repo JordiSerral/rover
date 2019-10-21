@@ -33,6 +33,24 @@ public class RoverResource {
 	private RoverService roverService;
 	
 	
+	/**
+	 * @api {post} /rovers/position Move Rover
+	 * @apiGroup Rover
+	 * @apiParam {Object[]} Movement Movement do Rover
+	 * @apiParam {String} Movement.direction  {'N','S','E','W'}
+	 * @apiParam {Number} Movement.units Units that will advance Rover in indicated direction
+	 * @apiParamExample {Object[]} JSON Body Example
+	 *    [{
+	 *      "direction": "N"
+	 *      "units": 19
+	 *    }]
+	 * @apiSuccess {String} Response Position about rover
+	 * @apiSuccessExample {String} Response
+	 * 		Position [Latitude=44, Longitude=-8]
+	 *
+	 * @apiError InvalidDirection Invalid direction in the movement
+	 * @apiError ExceedPosition Rover Exceed the limit position.
+	 */
 	@PostMapping("/position")
 	public ResponseEntity<String> moveRover(@RequestBody List<Movement> movement) {
 		
@@ -48,6 +66,20 @@ public class RoverResource {
 		}
 	}
 	
+	/**
+	 * @api {post} /rovers/english Rover Teach English 
+	 * @apiGroup Rover
+	 * @apiParam {String} englishText Text that Rover can use in Display
+	 * @apiParamExample {String} JSON Body Example
+	 *    
+	 *    {"Hello Aliens, I'm ABA Rover"}
+	 *    
+	 * @apiSuccess {String} Response Information that Rover teach the text.
+	 * @apiSuccessExample {String} Response
+	 * 
+	 * 		Rover is displaying the message on his display:{Hello Aliens, I'm ABA Rover}
+	 *
+	 */
 	@PostMapping("/english")
 	public ResponseEntity<String>teachEnglish(@RequestBody String englishText){
 		

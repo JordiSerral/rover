@@ -1,0 +1,8 @@
+{
+    "name": "Control - Rover ABA API Documentation",
+    "version": "1.0.0",
+    "description": "Rover ABA is a REST API that simulates the control of a Rover sent to Mars to teach English",
+    "template": {
+        "forceLanguage": "en"
+    }
+}
