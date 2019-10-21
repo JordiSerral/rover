@@ -9,26 +9,31 @@ import com.aba.rover.domain.model.Movement;
 import com.aba.rover.domain.model.Position;
 import com.aba.rover.exception.*;
 
+/**
+ * Rover Service Implementation
+ * 
+ * @author Jordi Serral
+ * 
+ */
 @Service
 public class RoverServiceImpl implements RoverService {
 
-	
 	@Override
 	public Position move(List<Movement> movement) throws InvalidDirectionException{
 		
 		boolean invalidDirection = false;
-		Position position = iniPosition;
+		
+		Position position = new Position();
 		
 		for (Movement mov: movement) {
 			Integer units = mov.getUnits();
 			
-			//validamovimient();
 			switch(mov.getDirection()) {
 			
-				case "N": moveLongitude(position, units, false); break;
-				case "S": moveLongitude(position, units, true); break;
-				case "W": moveLatitude(position, units, true); break;
-				case "E": moveLatitude(position, units, false); break;
+				case "N": moveLongitude(position, units, true); break;
+				case "S": moveLongitude(position, units, false); break;
+				case "W": moveLatitude(position, units, false); break;
+				case "E": moveLatitude(position, units, true); break;
 				default: invalidDirection = true;
 			}
 			
@@ -37,7 +42,7 @@ public class RoverServiceImpl implements RoverService {
 				throw new InvalidDirectionException(mov.getDirection());
 			}
 			if(position.validatePosition()){
-				throw new InvalidDirectionException(mov.getDirection());
+				throw new ExceedPositionException(position);
 			}
 		}
 		return position;
@@ -53,14 +58,6 @@ public class RoverServiceImpl implements RoverService {
 		display.teach();
 	}
 	
-	
-	/*private boolean validatePosition(Position position) {
-		
-		return (position.getLatitude() < Position.MINLAT
-				|| position.getLatitude() > Position.MAXLAT
-				|| position.getLongitude() < Position.MINLONG
-				|| position.getLongitude() > Position.MAXLONG);
-	}*/
 	
 	private void moveLongitude(Position position, Integer units, boolean advance) {
 		

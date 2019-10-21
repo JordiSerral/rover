@@ -2,11 +2,13 @@ package com.aba.rover.domain.model;
 
 import java.io.Serializable;
 
+/**
+ * Movement - Movement that rover can do. 
+ * @author Jordi Serral
+ * 
+ */
 public class Movement implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 8352150250150125458L;
 	
 	private String direction;

@@ -2,6 +2,12 @@ package com.aba.rover.domain.model;
 
 import java.util.Objects;
 
+/**
+ * Rover Position - Position in Latitude and Longitude 
+ * @author Jordi Serral
+ * 
+ */
+
 public class Position {
 	
 	private Integer latitude;

@@ -1,5 +1,10 @@
 package com.aba.rover.domain.model;
 
+/**
+ * Rover Display - Use the text to show aliens
+ * @author Jordi Serral
+ * 
+ */
 public class Display {
 
 	private String text;

@@ -7,18 +7,12 @@ import com.aba.rover.domain.model.Position;
 import com.aba.rover.exception.InvalidDirectionException;
 
 /**
+ * Rover Service Interface
  * @author Jordi Serral
  * 
  */
 
 public interface RoverService {
-	
-	/*
-	 * Move Rover with a Movement
-	 */
-	
-	public static final Position iniPosition = new Position();
-	
 	
 	public Position move(List<Movement> movement) throws InvalidDirectionException;
 	
