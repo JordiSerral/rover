@@ -31,6 +31,6 @@ To teach English sentence in Display:
 {"Hello Aliens, I'm ABA Rover"}
 ```
 
-##ApiDoc
--Unzip apidoc.7z
--open index.html
+## ApiDoc
+	-Unzip apidoc.7z
+	-open index.html
